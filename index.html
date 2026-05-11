@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn & Earn Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <div class="brand-mark">L</div>
+        <div>
+          <p>Learn & Earn</p>
+          <span>Skill growth hub</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-link active" data-target="dashboard">
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-link" data-target="learn">
+          <span>Learn</span>
+        </button>
+        <button class="nav-link" data-target="store">
+          <span>Digital Store</span>
+        </button>
+        <button class="nav-link" data-target="budget">
+          <span>Budget</span>
+        </button>
+        <button class="nav-link" data-target="assistant">
+          <span>Assistant</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-card">
+        <span class="eyebrow">Current Streak</span>
+        <strong id="streakCount">0 days</strong>
+        <p>Increase any skill today to keep your momentum alive.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div>
+          <span class="eyebrow">Premium learning workspace</span>
+          <h1 id="pageTitle">Dashboard</h1>
+        </div>
+        <div class="wallet">
+          <span>Coins</span>
+          <strong id="walletCoins">0</strong>
+        </div>
+      </header>
+
+      <section id="dashboard" class="page-section active">
+        <div class="hero-panel">
+          <div>
+            <span class="eyebrow">Welcome back</span>
+            <h2>Build skills, earn coins, and keep your learning finances in one calm workspace.</h2>
+            <p>Track progress, unlock badges, buy digital resources, and manage expenses without leaving the dashboard.</p>
+          </div>
+          <button class="primary-btn" data-jump="learn">Add a Skill</button>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span>Skills Added</span>
+            <strong id="skillsStat">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Points Earned</span>
+            <strong id="pointsStat">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Expenses Tracked</span>
+            <strong id="expensesStat">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Total Spending</span>
+            <strong id="spendingStat">$0</strong>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Achievements</span>
+                <h3>Badges</h3>
+              </div>
+            </div>
+            <div class="badges" id="badgesList"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Next Actions</span>
+                <h3>Focus Queue</h3>
+              </div>
+            </div>
+            <div class="activity-list" id="focusQueue"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="learn" class="page-section">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow">Learning Tracker</span>
+              <h2>Add skills and grow progress</h2>
+            </div>
+          </div>
+
+          <form class="inline-form" id="skillForm">
+            <input id="skillName" type="text" placeholder="Skill name, e.g. JavaScript" maxlength="40" required>
+            <button class="primary-btn" type="submit">Add Skill</button>
+          </form>
+        </div>
+
+        <div class="cards-grid" id="skillsList"></div>
+      </section>
+
+      <section id="store" class="page-section">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow">Digital Store</span>
+              <h2>Spend coins on learning resources</h2>
+            </div>
+            <div class="wallet compact">
+              <span>Available</span>
+              <strong id="storeCoins">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards-grid" id="storeList"></div>
+      </section>
+
+      <section id="budget" class="page-section">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow">Budget Tracker</span>
+              <h2>Log learning and personal expenses</h2>
+            </div>
+            <div class="wallet compact">
+              <span>Total</span>
+              <strong id="budgetTotal">$0</strong>
+            </div>
+          </div>
+
+          <form class="inline-form budget-form" id="expenseForm">
+            <input id="expenseTitle" type="text" placeholder="Expense title" maxlength="48" required>
+            <input id="expenseAmount" type="number" placeholder="Amount" min="0.01" step="0.01" required>
+            <button class="primary-btn" type="submit">Add Expense</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow">Expenses</span>
+              <h3>Recent spending</h3>
+            </div>
+          </div>
+          <div class="expense-list" id="expensesList"></div>
+        </div>
+      </section>
+
+      <section id="assistant" class="page-section">
+        <div class="assistant-layout">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Study Assistant</span>
+                <h2>Plan your next learning move</h2>
+              </div>
+            </div>
+            <div class="chat-window" id="chatWindow">
+              <div class="chat-message bot">Tell me what you are learning, and I will suggest a focused next step.</div>
+            </div>
+            <form class="chat-form" id="chatForm">
+              <input id="chatInput" type="text" placeholder="Ask for a study plan or resource idea..." required>
+              <button class="primary-btn" type="submit">Send</button>
+            </form>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Prompts</span>
+                <h3>Try asking</h3>
+              </div>
+            </div>
+            <div class="prompt-list">
+              <button data-prompt="Create a 7 day plan for learning JavaScript.">7 day coding plan</button>
+              <button data-prompt="How should I practice UI UX design today?">Design practice</button>
+              <button data-prompt="Suggest a business skill roadmap for beginners.">Business roadmap</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
