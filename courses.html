@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainosaur App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Urbanist:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+  <div class="login-gate" id="loginGate">
+    <div class="login-card">
+      <h1>Welcome to Brainosaur</h1>
+      <p>Enter your details to unlock your student workspace.</p>
+      <form id="loginForm" class="login-form">
+        <input id="nameInput" type="text" placeholder="Full Name" required>
+        <input id="emailInput" type="email" placeholder="Email ID" required>
+        <input id="passwordInput" type="password" placeholder="Password" minlength="6" required>
+        <input id="gradeInput" type="text" placeholder="Grade (Example: 8)" required>
+        <input id="parentEmailInput" type="email" placeholder="Parent Email ID" required>
+        <button class="cta-btn" type="submit">Enter App</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="app-shell hidden" id="appShell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="left-cluster">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">B</span>
+            <span>Brainosaur</span>
+          </a>
+          <nav class="section-nav" id="sectionNav">
+            <button data-section="dashboard" class="active">Dashboard</button>
+            <button data-section="geometry">Geometry</button>
+            <button data-section="robotics">Robotics</button>
+            <button data-section="coding">Coding</button>
+            <button data-section="marketplace">Marketplace</button>
+            <button data-section="assistant">AI Assistant</button>
+          </nav>
+        </div>
+        <div class="wallet-pill">
+          <span id="walletMoney">₹0</span>
+          <strong id="walletCoins">0 Coins</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section id="dashboard" class="app-section active">
+        <div class="welcome-panel">
+          <h2 id="welcomeText">Hi Student</h2>
+          <p>Track progress, learn visually, build circuits, and earn reward coins through practical activities.</p>
+        </div>
+
+        <div class="grid-two">
+          <article class="panel">
+            <h3>Parent Wallet Top-Up</h3>
+            <p>Add money for buying marketplace items.</p>
+            <form id="moneyForm" class="inline-form">
+              <input id="moneyInput" type="number" min="1" step="1" placeholder="Amount in ₹" required>
+              <button class="cta-btn" type="submit">Add Money</button>
+            </form>
+          </article>
+
+          <article class="panel">
+            <h3>Quick Stats</h3>
+            <div class="stats-list">
+              <div><span>Coins Earned</span><strong id="coinsEarnedStat">0</strong></div>
+              <div><span>Geometry Questions</span><strong id="geometryQuestionStat">0</strong></div>
+              <div><span>Robotics Builds</span><strong id="roboticsBuildStat">0</strong></div>
+              <div><span>Marketplace Purchases</span><strong id="purchaseStat">0</strong></div>
+            </div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <h3>Live Testimonials</h3>
+          <p class="muted">Parent and student feedback appears like live notifications.</p>
+          <div class="testimonial-box" id="testimonialBox"></div>
+        </article>
+      </section>
+
+      <section id="geometry" class="app-section">
+        <div class="section-head">
+          <h2>Middle School Geometry Visual Lab</h2>
+          <p>Use dynamic visuals, drag points, and ask unlimited questions to learn deeply.</p>
+        </div>
+
+        <div class="grid-two">
+          <article class="panel">
+            <h3>Interactive 3D and 2D Objects</h3>
+            <div class="control-row">
+              <label for="shapeSelect">Visual Object</label>
+              <select id="shapeSelect">
+                <option value="point-line">Points, Lines, and Planes</option>
+                <option value="angles">Angles and Protractor View</option>
+                <option value="triangle">Triangles</option>
+                <option value="quad">Quadrilaterals</option>
+                <option value="circle">Circles</option>
+                <option value="symmetry">Symmetry</option>
+                <option value="cartesian">Coordinate Geometry</option>
+                <option value="area-volume">Area and Volume</option>
+                <option value="cube">Cube</option>
+                <option value="sphere">Sphere</option>
+                <option value="cone">Cone</option>
+                <option value="cylinder">Cylinder</option>
+                <option value="pyramid">Pyramid</option>
+                <option value="prism">Prism</option>
+              </select>
+            </div>
+            <canvas id="geometryCanvas"></canvas>
+            <div class="small-note">Drag on the canvas to rotate 3D objects for relevant topics.</div>
+          </article>
+
+          <article class="panel">
+            <h3>Geometry Topics Library</h3>
+            <div class="topic-list">
+              <button class="topic-btn" data-topic="points">Points, Lines, Rays, Parallel and Perpendicular Lines</button>
+              <button class="topic-btn" data-topic="angles">Acute, Obtuse, Right, Straight, Vertical, Complementary, Supplementary</button>
+              <button class="topic-btn" data-topic="triangles">Triangle Sum, Isosceles, Equilateral, Scalene, Similar, Congruent, Pythagorean</button>
+              <button class="topic-btn" data-topic="quadrilaterals">Square, Rectangle, Parallelogram, Rhombus, Trapezium</button>
+              <button class="topic-btn" data-topic="circles">Radius, Diameter, Circumference, Chord, Arc, Area</button>
+              <button class="topic-btn" data-topic="transform">Reflection, Rotation, Translation</button>
+              <button class="topic-btn" data-topic="coordinate">Cartesian Plane, Distance Formula, Midpoint Formula</button>
+              <button class="topic-btn" data-topic="volume">Area, Perimeter, Surface Area, Volume, 3D Nets</button>
+            </div>
+            <div id="topicExplanation" class="explain-box">Select a topic to get visual guidance and formulas.</div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <h3>Ask Geometry AI</h3>
+          <p class="muted">Ask unlimited questions. Every useful question gives coins.</p>
+          <textarea id="geometryQuestionInput" placeholder="Example: Explain Pythagorean theorem with numbers a=15 and b=15"></textarea>
+          <div class="inline-form">
+            <button class="cta-btn" id="askGeometryBtn" type="button">Ask Question</button>
+            <span class="coin-badge">+5 Coins per question</span>
+          </div>
+          <div id="geometryAnswer" class="answer-box"></div>
+        </article>
+      </section>
+
+      <section id="robotics" class="app-section">
+        <div class="section-head">
+          <h2>Robotics Lab (Tinkercad Inspired)</h2>
+          <p>Add components on the board, connect ideas, and learn circuit logic with AI help.</p>
+        </div>
+
+        <div class="grid-two">
+          <article class="panel">
+            <h3>Circuit Builder</h3>
+            <canvas id="roboticsCanvas"></canvas>
+            <div class="component-row">
+              <button class="comp-btn" data-component="battery">Battery</button>
+              <button class="comp-btn" data-component="resistor">Resistor</button>
+              <button class="comp-btn" data-component="bulb">Bulb</button>
+              <button class="comp-btn" data-component="wire">Wire</button>
+              <button class="comp-btn" data-component="switch">Switch</button>
+            </div>
+            <div class="inline-form">
+              <button class="cta-btn" id="runCircuitBtn" type="button">Run Circuit</button>
+              <button class="outline-btn" id="resetCircuitBtn" type="button">Reset</button>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>AI Robotics Mentor</h3>
+            <textarea id="roboticsPromptInput" placeholder="Example: How to connect battery, resistor and bulb safely?"></textarea>
+            <button class="cta-btn" id="askRoboticsBtn" type="button">Ask Robotics AI</button>
+            <div id="roboticsAnswer" class="answer-box"></div>
+            <div id="circuitStatus" class="status-box">Add components to start building your circuit.</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="coding" class="app-section">
+        <div class="section-head">
+          <h2>Coding Practice Arena</h2>
+          <p>Build logic with guided AI hints and coin rewards.</p>
+        </div>
+
+        <article class="panel">
+          <h3>Challenge: Function Logic</h3>
+          <p class="muted">Write a function `doubleNumber(num)` that returns double value, then also add `triangleArea(base, height)`.</p>
+          <textarea id="codingInput" placeholder="function doubleNumber(num){ return num*2; }"></textarea>
+          <div class="inline-form">
+            <button class="cta-btn" id="submitCodeBtn" type="button">Submit Code</button>
+            <span class="coin-badge">+20 Coins on success</span>
+          </div>
+          <div id="codingFeedback" class="answer-box"></div>
+        </article>
+      </section>
+
+      <section id="marketplace" class="app-section">
+        <div class="section-head">
+          <h2>Marketplace</h2>
+          <p>Buy learning essentials and get cashback coins on eligible purchases.</p>
+        </div>
+        <div class="market-grid" id="marketGrid"></div>
+      </section>
+
+      <section id="assistant" class="app-section">
+        <div class="section-head">
+          <h2>Universal AI Assistant</h2>
+          <p>Ask for help in Geometry, Robotics, Coding, and study planning.</p>
+        </div>
+        <article class="panel">
+          <div class="chat-window" id="chatWindow">
+            <div class="chat bot">Ask me what you want to learn and I will guide you step by step.</div>
+          </div>
+          <form id="assistantForm" class="inline-form">
+            <input id="assistantInput" type="text" placeholder="How do I solve similar triangles quickly?" required>
+            <button class="cta-btn" type="submit">Send</button>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <div class="coin-burst hidden" id="coinBurst">+30 Coins Cashback!</div>
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="courses.js"></script>
+</body>
+</html>
