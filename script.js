@@ -330,7 +330,7 @@ function renderDashboard() {
   const productCount = defaultProducts.length + state.sellerProducts.length;
   elements.walletCoins.textContent = state.coins;
   elements.mobileCoins.textContent = `${state.coins} coins`;
-  elements.heroCoins.textContent = state.coins;
+  if (elements.heroCoins) elements.heroCoins.textContent = state.coins;
   elements.enrolledStat.textContent = state.enrolled.length;
   elements.coinsStat.textContent = state.coins;
   elements.challengeStat.textContent = state.completedActivities.length;
