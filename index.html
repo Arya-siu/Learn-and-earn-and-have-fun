@@ -3,92 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn & Earn Platform</title>
+  <title>Learn & Earn Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="mobile-bar">
+    <button class="icon-button" id="menuToggle" aria-label="Open navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <strong>Learn & Earn</strong>
+    <span id="mobileCoins">80 coins</span>
+  </div>
+
   <div class="app-shell">
-    <aside class="sidebar" aria-label="Main navigation">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
       <div class="brand">
-        <div class="brand-mark">L</div>
+        <div class="brand-mark">LE</div>
         <div>
           <p>Learn & Earn</p>
-          <span>Skill growth hub</span>
+          <span>Student marketplace portal</span>
         </div>
       </div>
 
       <nav class="nav-menu">
-        <button class="nav-link active" data-target="dashboard">
-          <span>Dashboard</span>
-        </button>
-        <button class="nav-link" data-target="learn">
-          <span>Learn</span>
-        </button>
-        <button class="nav-link" data-target="store">
-          <span>Digital Store</span>
-        </button>
-        <button class="nav-link" data-target="budget">
-          <span>Budget</span>
-        </button>
-        <button class="nav-link" data-target="assistant">
-          <span>Assistant</span>
-        </button>
+        <button class="nav-link active" data-target="dashboard">Dashboard</button>
+        <button class="nav-link" data-target="courses">Courses</button>
+        <button class="nav-link" data-target="labs">3D Labs</button>
+        <button class="nav-link" data-target="marketplace">Marketplace</button>
+        <button class="nav-link" data-target="parent">Parent</button>
+        <button class="nav-link" data-target="seller">Seller</button>
+        <button class="nav-link" data-target="assistant">Assistant</button>
       </nav>
 
       <div class="sidebar-card">
-        <span class="eyebrow">Current Streak</span>
-        <strong id="streakCount">0 days</strong>
-        <p>Increase any skill today to keep your momentum alive.</p>
+        <span class="label">Role</span>
+        <div class="role-switch" id="roleSwitch" aria-label="Choose portal role">
+          <button class="active" data-role="student">Student</button>
+          <button data-role="parent">Parent</button>
+          <button data-role="seller">Seller</button>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <span class="label">Language</span>
+        <select id="languageSelect" aria-label="Choose language">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="te">తెలుగు</option>
+          <option value="gu">ગુજરાતી</option>
+          <option value="pa">ਪੰਜਾਬੀ</option>
+          <option value="ta">தமிழ்</option>
+          <option value="ml">മലയാളം</option>
+          <option value="kn">ಕನ್ನಡ</option>
+          <option value="bho">भोजपुरी</option>
+        </select>
       </div>
     </aside>
 
     <main class="main-content">
       <header class="topbar">
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
         <div>
-          <span class="eyebrow">Premium learning workspace</span>
+          <span class="eyebrow" data-i18n="eyebrow">World class learning portal</span>
           <h1 id="pageTitle">Dashboard</h1>
         </div>
-        <div class="wallet">
-          <span>Coins</span>
-          <strong id="walletCoins">0</strong>
+        <div class="topbar-actions">
+          <div class="coin-pill">
+            <span data-i18n="coins">Coins</span>
+            <strong id="walletCoins">80</strong>
+          </div>
+          <button class="primary-btn hover-invert" data-jump="courses" data-i18n="startLearning">Start learning</button>
         </div>
       </header>
 
       <section id="dashboard" class="page-section active">
         <div class="hero-panel">
-          <div>
-            <span class="eyebrow">Welcome back</span>
-            <h2>Build skills, earn coins, and keep your learning finances in one calm workspace.</h2>
-            <p>Track progress, unlock badges, buy digital resources, and manage expenses without leaving the dashboard.</p>
+          <div class="hero-copy">
+            <span class="eyebrow" data-i18n="welcome">Welcome back</span>
+            <h2 data-i18n="heroTitle">A bright school portal for learning, earning coins, shopping essentials, and tracking progress.</h2>
+            <p data-i18n="heroText">Students complete challenges, parents see progress, and sellers list useful school items in one polished workspace.</p>
+            <div class="hero-actions">
+              <button class="primary-btn hover-invert" data-jump="courses">Explore courses</button>
+              <button class="secondary-btn hover-invert" data-jump="marketplace">Open marketplace</button>
+            </div>
           </div>
-          <button class="primary-btn" data-jump="learn">Add a Skill</button>
+          <div class="hero-art" aria-label="Learning and marketplace preview">
+            <div class="photo-card photo-learning"></div>
+            <div class="photo-card photo-stationery"></div>
+            <div class="photo-card photo-fashion"></div>
+            <div class="floating-score">
+              <strong id="heroCoins">80</strong>
+              <span>earned coins</span>
+            </div>
+          </div>
         </div>
 
         <div class="stats-grid">
-          <article class="stat-card">
-            <span>Skills Added</span>
-            <strong id="skillsStat">0</strong>
+          <article class="stat-card interactive-card">
+            <span>Courses enrolled</span>
+            <strong id="enrolledStat">0</strong>
           </article>
-          <article class="stat-card">
-            <span>Points Earned</span>
-            <strong id="pointsStat">0</strong>
+          <article class="stat-card interactive-card">
+            <span>Coins earned</span>
+            <strong id="coinsStat">80</strong>
           </article>
-          <article class="stat-card">
-            <span>Expenses Tracked</span>
-            <strong id="expensesStat">0</strong>
+          <article class="stat-card interactive-card">
+            <span>Challenges completed</span>
+            <strong id="challengeStat">0</strong>
           </article>
-          <article class="stat-card">
-            <span>Total Spending</span>
-            <strong id="spendingStat">$0</strong>
+          <article class="stat-card interactive-card">
+            <span>Marketplace items</span>
+            <strong id="marketStat">0</strong>
           </article>
         </div>
 
-        <div class="content-grid">
+        <div class="dashboard-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Student plan</span>
+                <h3>Recommended next steps</h3>
+              </div>
+              <button class="text-btn" data-jump="courses">View all</button>
+            </div>
+            <div class="activity-list" id="nextSteps"></div>
+          </article>
+
           <article class="panel">
             <div class="panel-header">
               <div>
@@ -96,84 +140,179 @@
                 <h3>Badges</h3>
               </div>
             </div>
-            <div class="badges" id="badgesList"></div>
+            <div class="badge-list" id="badgeList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="courses" class="page-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Course studio</span>
+            <h2>Enroll, complete real tasks, and earn coins.</h2>
+          </div>
+          <p>No fake progress button. Progress grows when a student finishes a course activity.</p>
+        </div>
+
+        <div class="course-grid" id="courseGrid"></div>
+
+        <div class="panel code-arena">
+          <div class="panel-header">
+            <div>
+              <span class="eyebrow">Coding earn system</span>
+              <h3>Daily code challenge</h3>
+            </div>
+            <span class="reward-pill">+35 coins</span>
+          </div>
+          <p class="muted">Write a JavaScript function named <strong>doubleNumber</strong> that returns a number multiplied by 2.</p>
+          <textarea id="codeAnswer" placeholder="function doubleNumber(num) { return num * 2; }"></textarea>
+          <div class="form-actions">
+            <button class="primary-btn hover-invert" id="submitCodeChallenge">Submit code</button>
+            <span id="codeFeedback" class="feedback"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="labs" class="page-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Interactive 3D labs</span>
+            <h2>Geometry and robotics become something students can touch.</h2>
+          </div>
+          <p>Powered by Three.js when the browser can load it, with a canvas fallback for reliability.</p>
+        </div>
+
+        <div class="lab-grid">
+          <article class="panel lab-panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Geometry course</span>
+                <h3>Shape visualizer</h3>
+              </div>
+              <span class="reward-pill">+20 coins</span>
+            </div>
+            <canvas id="geometryCanvas" class="lab-canvas" aria-label="Interactive geometry model"></canvas>
+            <div class="shape-tools">
+              <button class="tool-chip active" data-shape="cube">Cube</button>
+              <button class="tool-chip" data-shape="sphere">Sphere</button>
+              <button class="tool-chip" data-shape="cone">Cone</button>
+              <button class="tool-chip" data-shape="cylinder">Cylinder</button>
+            </div>
+            <textarea id="geometryQuestion" placeholder="Paste a geometry question here, for example: Explain the volume of a cylinder."></textarea>
+            <button class="primary-btn hover-invert" id="explainGeometry">Visual explain</button>
+            <div class="explanation-box" id="geometryExplanation">Choose a shape or paste a question to get a visual explanation.</div>
+          </article>
+
+          <article class="panel lab-panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Robotics course</span>
+                <h3>Circuit builder</h3>
+              </div>
+              <span class="reward-pill">+30 coins</span>
+            </div>
+            <canvas id="roboticsCanvas" class="lab-canvas" aria-label="Interactive robotics circuit"></canvas>
+            <div class="shape-tools">
+              <button class="tool-chip" data-component="battery">Battery</button>
+              <button class="tool-chip" data-component="led">LED</button>
+              <button class="tool-chip" data-component="resistor">Resistor</button>
+              <button class="tool-chip" data-component="wire">Wire</button>
+            </div>
+            <button class="primary-btn hover-invert" id="runCircuit">Run circuit</button>
+            <div class="explanation-box" id="circuitFeedback">Build with battery, resistor, LED, and wire to complete the robotics task.</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="marketplace" class="page-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Student marketplace</span>
+            <h2>Stationery, clothes, shoes, and learning kits.</h2>
+          </div>
+          <p>Buy using earned coins. Sellers can list useful student products from their portal.</p>
+        </div>
+
+        <div class="market-grid" id="marketGrid"></div>
+      </section>
+
+      <section id="parent" class="page-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Parent portal</span>
+            <h2>Clear progress and spending overview.</h2>
+          </div>
+          <p>Parents can understand what the student is learning and how coins are being used.</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Learning report</span>
+                <h3>Course progress</h3>
+              </div>
+            </div>
+            <div id="parentProgress" class="activity-list"></div>
           </article>
 
           <article class="panel">
             <div class="panel-header">
               <div>
-                <span class="eyebrow">Next Actions</span>
-                <h3>Focus Queue</h3>
+                <span class="eyebrow">Budget</span>
+                <h3>Expense tracker</h3>
               </div>
+              <strong id="budgetTotal">₹0</strong>
             </div>
-            <div class="activity-list" id="focusQueue"></div>
+            <form class="inline-form" id="expenseForm">
+              <input id="expenseTitle" type="text" placeholder="Expense name" maxlength="48" required>
+              <input id="expenseAmount" type="number" placeholder="Amount" min="1" step="1" required>
+              <button class="primary-btn hover-invert" type="submit">Add</button>
+            </form>
+            <div class="expense-list" id="expenseList"></div>
           </article>
         </div>
       </section>
 
-      <section id="learn" class="page-section">
-        <div class="panel">
-          <div class="panel-header">
-            <div>
-              <span class="eyebrow">Learning Tracker</span>
-              <h2>Add skills and grow progress</h2>
-            </div>
+      <section id="seller" class="page-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Seller portal</span>
+            <h2>List school products for students and parents.</h2>
           </div>
-
-          <form class="inline-form" id="skillForm">
-            <input id="skillName" type="text" placeholder="Skill name, e.g. JavaScript" maxlength="40" required>
-            <button class="primary-btn" type="submit">Add Skill</button>
-          </form>
+          <p>Stationery, uniforms, shoes, bags, kits, books, and helpful digital resources all fit here.</p>
         </div>
 
-        <div class="cards-grid" id="skillsList"></div>
-      </section>
-
-      <section id="store" class="page-section">
-        <div class="panel">
-          <div class="panel-header">
-            <div>
-              <span class="eyebrow">Digital Store</span>
-              <h2>Spend coins on learning resources</h2>
+        <div class="dashboard-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Create listing</span>
+                <h3>Add a product</h3>
+              </div>
             </div>
-            <div class="wallet compact">
-              <span>Available</span>
-              <strong id="storeCoins">0</strong>
-            </div>
-          </div>
-        </div>
+            <form class="seller-form" id="sellerForm">
+              <input id="sellerTitle" type="text" placeholder="Product title" maxlength="52" required>
+              <select id="sellerCategory" required>
+                <option value="Stationery">Stationery</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Learning Kit">Learning Kit</option>
+              </select>
+              <input id="sellerPrice" type="number" placeholder="Coin price" min="10" step="5" required>
+              <button class="primary-btn hover-invert" type="submit">Publish listing</button>
+            </form>
+          </article>
 
-        <div class="cards-grid" id="storeList"></div>
-      </section>
-
-      <section id="budget" class="page-section">
-        <div class="panel">
-          <div class="panel-header">
-            <div>
-              <span class="eyebrow">Budget Tracker</span>
-              <h2>Log learning and personal expenses</h2>
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Seller analytics</span>
+                <h3>Your listings</h3>
+              </div>
             </div>
-            <div class="wallet compact">
-              <span>Total</span>
-              <strong id="budgetTotal">$0</strong>
-            </div>
-          </div>
-
-          <form class="inline-form budget-form" id="expenseForm">
-            <input id="expenseTitle" type="text" placeholder="Expense title" maxlength="48" required>
-            <input id="expenseAmount" type="number" placeholder="Amount" min="0.01" step="0.01" required>
-            <button class="primary-btn" type="submit">Add Expense</button>
-          </form>
-        </div>
-
-        <div class="panel">
-          <div class="panel-header">
-            <div>
-              <span class="eyebrow">Expenses</span>
-              <h3>Recent spending</h3>
-            </div>
-          </div>
-          <div class="expense-list" id="expensesList"></div>
+            <div class="activity-list" id="sellerListings"></div>
+          </article>
         </div>
       </section>
 
@@ -182,30 +321,30 @@
           <article class="panel">
             <div class="panel-header">
               <div>
-                <span class="eyebrow">Study Assistant</span>
-                <h2>Plan your next learning move</h2>
+                <span class="eyebrow">Study assistant</span>
+                <h2>Ask for a plan, explanation, or project idea.</h2>
               </div>
             </div>
             <div class="chat-window" id="chatWindow">
-              <div class="chat-message bot">Tell me what you are learning, and I will suggest a focused next step.</div>
+              <div class="chat-message bot">Ask me for a study plan, geometry explanation, robotics idea, or marketplace suggestion.</div>
             </div>
             <form class="chat-form" id="chatForm">
-              <input id="chatInput" type="text" placeholder="Ask for a study plan or resource idea..." required>
-              <button class="primary-btn" type="submit">Send</button>
+              <input id="chatInput" type="text" placeholder="Example: Give me a geometry plan for circles" required>
+              <button class="primary-btn hover-invert" type="submit">Send</button>
             </form>
           </article>
 
           <article class="panel">
             <div class="panel-header">
               <div>
-                <span class="eyebrow">Prompts</span>
-                <h3>Try asking</h3>
+                <span class="eyebrow">Quick prompts</span>
+                <h3>One tap ideas</h3>
               </div>
             </div>
             <div class="prompt-list">
-              <button data-prompt="Create a 7 day plan for learning JavaScript.">7 day coding plan</button>
-              <button data-prompt="How should I practice UI UX design today?">Design practice</button>
-              <button data-prompt="Suggest a business skill roadmap for beginners.">Business roadmap</button>
+              <button data-prompt="Explain cube volume visually.">Cube volume</button>
+              <button data-prompt="Give me a beginner robotics circuit task.">Robotics task</button>
+              <button data-prompt="Create a 5 day coding coin plan.">Coding coin plan</button>
             </div>
           </article>
         </div>
@@ -214,6 +353,7 @@
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
