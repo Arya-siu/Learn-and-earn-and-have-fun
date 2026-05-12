@@ -23,7 +23,7 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
     linear-gradient(115deg, rgba(223, 245, 236, 0.72), transparent 38rem),
     linear-gradient(180deg, #fffaf0 0%, var(--bg) 42%, #f7f9f5 100%);
@@ -318,6 +318,7 @@ textarea:focus {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.88);
   box-shadow: 0 10px 34px rgba(44, 38, 27, 0.08);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background 200ms ease, color 200ms ease;
 }
 
 .hero-panel {
@@ -328,12 +329,19 @@ textarea:focus {
   overflow: hidden;
 }
 
-.hero-copy h2,
+.hero-copy h2 {
+  margin: 10px 0 12px;
+  max-width: 860px;
+  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
 .section-heading h2,
 .assistant-layout h2 {
   margin: 10px 0 12px;
   max-width: 860px;
-  font-size: clamp(2rem, 4.2vw, 4.6rem);
+  font-size: clamp(2rem, 3.6vw, 4rem);
   line-height: 1.02;
   letter-spacing: 0;
 }
@@ -535,6 +543,8 @@ textarea:focus {
 .course-body h3,
 .market-body h3 {
   margin: 0 0 8px;
+  font-size: 1.45rem;
+  line-height: 1.2;
 }
 
 .progress-shell {
@@ -644,6 +654,55 @@ textarea:focus {
 
 .market-card:hover img {
   transform: scale(1.06);
+}
+
+.course-card:hover,
+.market-card:hover {
+  color: #f6f8ff;
+  border-color: transparent;
+  background: linear-gradient(135deg, #3a67ea 0%, #4a42cf 100%);
+}
+
+.course-card:hover .course-body h3,
+.market-card:hover .market-body h3,
+.course-card:hover strong,
+.market-card:hover strong {
+  color: #ffffff;
+}
+
+.course-card:hover .muted,
+.market-card:hover .muted,
+.course-card:hover .category-pill,
+.market-card:hover .category-pill {
+  color: #e9efff;
+}
+
+.course-card:hover .category-pill,
+.market-card:hover .category-pill {
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.course-card:hover .progress-shell {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.course-card:hover .progress-bar {
+  background: linear-gradient(90deg, #ffd77c, #ffffff);
+}
+
+.course-card:hover .primary-btn,
+.market-card:hover .primary-btn {
+  color: #152346;
+  border-color: #ffffff;
+  background: #ffffff;
+}
+
+.course-card:hover .secondary-btn,
+.market-card:hover .secondary-btn {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .price-row {
