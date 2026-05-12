@@ -3,335 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brainosaur - AI Learning Platform</title>
+  <title>Brainosaur</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Urbanist:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="particles" aria-hidden="true"></canvas>
-
-  <header class="site-header" id="top">
-    <nav class="nav shell">
-      <a class="brand" href="#top">
-        <span class="brand-mark">B</span>
-        <span class="brand-name" data-app-name>Brainosaur</span>
-      </a>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="nav-links" id="navLinks">
-        <a href="#top">Home</a>
-        <a href="#features">Features</a>
-        <a href="#courses">Courses</a>
-        <a href="#rewards">Rewards</a>
-        <a href="#community">Community</a>
-        <a href="#about">About</a>
-        <button class="ghost-btn">Login</button>
-        <button class="cta-btn glow-pulse">Start Free</button>
+  <header class="site-header">
+    <nav class="shell nav">
+      <div class="nav-left">
+        <a class="brand" href="#">
+          <span class="brand-mark">B</span>
+          <span>Brainosaur</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#courses">Courses</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a class="ghost-btn" href="courses.html">Login</a>
+        <a class="cta-btn" href="courses.html">Start Free</a>
       </div>
     </nav>
   </header>
 
-  <main>
+  <main id="home">
     <section class="hero shell section-reveal">
-      <div class="hero-copy">
-        <span class="badge">AI Powered Learning Platform</span>
-        <h1>Learn Skills. Earn Rewards. Build Your Future.</h1>
+      <div>
+        <span class="hero-chip">AI Powered Student Platform</span>
+        <h1>Welcome to Brainosaur</h1>
         <p>
-          A futuristic education platform where students learn through AI-powered lessons,
-          complete challenges, earn rewards, track progress, and unlock real-world opportunities.
+          A modern learning ecosystem where students build skills, earn rewards, use AI tools,
+          and grow with parents and mentors in one premium experience.
         </p>
         <div class="hero-actions">
-          <button class="cta-btn">Start Learning</button>
-          <button class="outline-btn">Explore Features</button>
+          <a class="cta-btn" href="courses.html">Enter Learning App</a>
+          <a class="outline-btn" href="#features">Explore Features</a>
         </div>
       </div>
-
-      <div class="hero-visual">
-        <article class="dashboard-card float-a">
-          <header>
-            <strong>Student Analytics</strong>
-            <span>Today</span>
-          </header>
-          <div class="chart">
-            <span style="height: 40%"></span>
-            <span style="height: 65%"></span>
-            <span style="height: 52%"></span>
-            <span style="height: 80%"></span>
-            <span style="height: 94%"></span>
-          </div>
+      <div class="hero-panel">
+        <article class="hero-card">
+          <h3>Learning XP</h3>
+          <div class="meter"><span style="width: 74%"></span></div>
+          <p>+125 XP from AI challenge</p>
         </article>
-
-        <article class="dashboard-card float-b">
-          <header>
-            <strong>XP & Coins</strong>
-            <span>+128 XP</span>
-          </header>
-          <div class="xp-row">
-            <div class="xp-label">Level Progress</div>
-            <div class="xp-track"><div style="width: 76%"></div></div>
-          </div>
-          <div class="coin-row">
-            <span>Coins</span>
-            <strong>2,480</strong>
-          </div>
+        <article class="hero-card">
+          <h3>Rewards Wallet</h3>
+          <strong>2,480 Coins</strong>
+          <p>Buy tools and get cashback rewards</p>
         </article>
-
-        <article class="dashboard-card float-c">
-          <header>
-            <strong>AI Tutor</strong>
-            <span>Online</span>
-          </header>
-          <p>Summarized 4 chapters and generated quiz for Geometry.</p>
-        </article>
-
-        <article class="dashboard-card float-d">
-          <header>
-            <strong>Streak</strong>
-            <span>21 Days</span>
-          </header>
-          <div class="streak-dots">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-          </div>
+        <article class="hero-card">
+          <h3>Daily Streak</h3>
+          <strong>21 Days</strong>
+          <p>Consistency unlocks bonus quests</p>
         </article>
       </div>
     </section>
 
-    <section id="features" class="features shell section-reveal">
-      <header class="section-heading">
-        <span class="badge soft">Everything students need in one ecosystem</span>
-        <h2>From learning and productivity to earning and collaboration.</h2>
+    <section id="features" class="shell section features section-reveal">
+      <header class="section-head">
+        <span class="section-chip">Everything students need</span>
+        <h2>One platform for learning, rewards, AI, and growth.</h2>
       </header>
-
       <div class="feature-grid">
         <article class="feature-card">
-          <div class="feature-icon">AI</div>
           <h3>AI Study Assistant</h3>
-          <p>Instant explanations, summaries, and smart tutoring.</p>
+          <p>Instant concept help, summaries, and guided study plans.</p>
         </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">XP</div>
-          <h3>Gamified Learning</h3>
-          <p>Earn XP, coins, streaks, and achievement badges.</p>
-        </article>
-
         <article class="feature-card active">
-          <div class="feature-icon">MK</div>
-          <h3>Skill Marketplace</h3>
-          <p>Learn valuable skills and monetize your knowledge.</p>
+          <h3>Gamified Learning</h3>
+          <p>Earn XP, coins, streaks, and unlock meaningful rewards.</p>
         </article>
-
         <article class="feature-card">
-          <div class="feature-icon">NT</div>
-          <h3>Smart Notes</h3>
-          <p>Organize notes with AI-powered categorization.</p>
+          <h3>Parent Wallet Connect</h3>
+          <p>Parents can add money for school essentials and learning tools.</p>
         </article>
-
         <article class="feature-card">
-          <div class="feature-icon">PL</div>
-          <h3>Study Planner</h3>
-          <p>Track goals, deadlines, and learning streaks.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">CM</div>
-          <h3>Community Rooms</h3>
-          <p>Collaborate with students worldwide.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">RW</div>
-          <h3>Rewards System</h3>
-          <p>Redeem coins for premium content and perks.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">AN</div>
-          <h3>Analytics Dashboard</h3>
-          <p>Visualize your progress with modern charts.</p>
+          <h3>Marketplace</h3>
+          <p>Buy useful items and receive cashback coins after purchases.</p>
         </article>
       </div>
     </section>
 
-    <section id="community" class="proof shell section-reveal">
-      <div class="testimonials panel">
-        <header class="panel-head">
-          <h3>Student Testimonials</h3>
-        </header>
-        <div class="testimonial-list">
-          <article>
-            <p>"My streak went from 3 days to 40 days with Brainosaur challenges."</p>
-            <span>- Aadhya, Class 11</span>
-          </article>
-          <article>
-            <p>"AI summaries save me hours every week, and rewards keep me consistent."</p>
-            <span>- Vihaan, B.Tech Year 1</span>
-          </article>
-          <article>
-            <p>"Feels like using a premium startup product, not a regular learning app."</p>
-            <span>- Sana, Design Student</span>
-          </article>
-        </div>
-      </div>
-
-      <div class="leaderboard panel" id="rewards">
-        <header class="panel-head">
-          <h3>Student Leaderboard</h3>
-        </header>
-        <ol>
-          <li><span>Riya</span><strong>12,450 XP</strong></li>
-          <li><span>Arjun</span><strong>11,980 XP</strong></li>
-          <li><span>Meera</span><strong>11,430 XP</strong></li>
-          <li><span>Kabir</span><strong>10,965 XP</strong></li>
-          <li><span>Anaya</span><strong>10,420 XP</strong></li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="courses" class="courses shell section-reveal">
-      <header class="section-heading">
-        <span class="badge soft">Top courses</span>
-        <h2>Launch real career skills with guided AI paths.</h2>
+    <section id="courses" class="shell section section-reveal">
+      <header class="section-head">
+        <span class="section-chip">Dedicated Courses</span>
+        <h2>Click any course to open its full AI learning page.</h2>
       </header>
-
-      <div class="carousel-wrap">
-        <button class="carousel-btn" id="prevCourse" aria-label="Previous course">&#9664;</button>
-        <div class="carousel-viewport">
-          <div class="carousel-track" id="courseTrack">
-            <article class="course-card">
-              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80" alt="Coding course">
-              <div>
-                <h3>Full Stack Web Development</h3>
-                <p>Build portfolio-ready apps with project sprints.</p>
-              </div>
-            </article>
-            <article class="course-card">
-              <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=80" alt="Data science course">
-              <div>
-                <h3>Data Science with Python</h3>
-                <p>Master analysis, ML basics, and real datasets.</p>
-              </div>
-            </article>
-            <article class="course-card">
-              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" alt="Business course">
-              <div>
-                <h3>Startup & Product Strategy</h3>
-                <p>Learn market fit, product thinking, and growth loops.</p>
-              </div>
-            </article>
-            <article class="course-card">
-              <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="UI design course">
-              <div>
-                <h3>UI/UX Design Systems</h3>
-                <p>Design polished interfaces with conversion-first UX.</p>
-              </div>
-            </article>
+      <div class="course-grid">
+        <a class="course-card" href="courses.html?course=geometry">
+          <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1000&q=80" alt="Geometry">
+          <div>
+            <h3>Geometry Studio</h3>
+            <p>Interactive shapes, formulas, transformations, and visual explanations.</p>
           </div>
-        </div>
-        <button class="carousel-btn" id="nextCourse" aria-label="Next course">&#9654;</button>
+        </a>
+        <a class="course-card" href="courses.html?course=robotics">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80" alt="Robotics">
+          <div>
+            <h3>Robotics Lab</h3>
+            <p>Tinkercad-inspired components, circuit simulations, and AI guidance.</p>
+          </div>
+        </a>
+        <a class="course-card" href="courses.html?course=coding">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=80" alt="Coding">
+          <div>
+            <h3>Coding Arena</h3>
+            <p>Practice tasks with step-by-step AI hints and reward milestones.</p>
+          </div>
+        </a>
       </div>
     </section>
 
-    <section class="pricing shell section-reveal">
-      <header class="section-heading">
-        <span class="badge soft">Pricing</span>
-        <h2>Flexible plans for every learner stage.</h2>
+    <section id="testimonials" class="shell section testimonials section-reveal">
+      <header class="section-head">
+        <span class="section-chip">Live Voices</span>
+        <h2>Parents and students share progress in real time.</h2>
       </header>
-
-      <div class="pricing-grid">
-        <article class="price-card">
-          <h3>Starter</h3>
-          <p class="price">$0<span>/month</span></p>
-          <ul>
-            <li>AI assistant basic mode</li>
-            <li>Daily challenges</li>
-            <li>Community rooms</li>
-          </ul>
-          <button class="outline-btn">Get started</button>
-        </article>
-
-        <article class="price-card featured">
-          <h3>Pro Student</h3>
-          <p class="price">$19<span>/month</span></p>
-          <ul>
-            <li>Advanced AI tutoring</li>
-            <li>Unlimited rewards quests</li>
-            <li>Premium course access</li>
-            <li>Performance analytics</li>
-          </ul>
-          <button class="cta-btn">Start free trial</button>
-        </article>
-
-        <article class="price-card">
-          <h3>Campus</h3>
-          <p class="price">$99<span>/month</span></p>
-          <ul>
-            <li>Group dashboards</li>
-            <li>Mentor management</li>
-            <li>Institution reports</li>
-          </ul>
-          <button class="outline-btn">Contact sales</button>
-        </article>
-      </div>
+      <div class="testimonial-stage" id="testimonialStage"></div>
     </section>
 
-    <section class="faq shell section-reveal" id="about">
-      <header class="section-heading">
-        <span class="badge soft">FAQ</span>
-        <h2>Everything you need to know before joining.</h2>
-      </header>
-
-      <div class="faq-list">
-        <article class="faq-item open">
-          <button class="faq-q">Is Brainosaur only for school students?</button>
-          <p class="faq-a">No. It works for school, college, and early-career learners who want AI-guided upskilling.</p>
-        </article>
-        <article class="faq-item">
-          <button class="faq-q">How do rewards work?</button>
-          <p class="faq-a">You earn XP and coins by completing lessons, streaks, and challenge quests, then redeem rewards in-platform.</p>
-        </article>
-        <article class="faq-item">
-          <button class="faq-q">Can I track my full learning analytics?</button>
-          <p class="faq-a">Yes, you get progress trends, completion graphs, and focus suggestions from the AI assistant.</p>
-        </article>
-      </div>
+    <section id="about" class="shell section about section-reveal">
+      <h2>Brainosaur is built for modern students, active parents, and practical outcomes.</h2>
+      <a class="cta-btn" href="courses.html">Open App</a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div>
-        <a class="brand" href="#top">
-          <span class="brand-mark">B</span>
-          <span class="brand-name" data-app-name>Brainosaur</span>
-        </a>
-        <p>Futuristic AI learning ecosystem for students who want outcomes.</p>
-      </div>
-      <div>
-        <h4>Platform</h4>
-        <a href="#features">Features</a>
-        <a href="#courses">Courses</a>
-        <a href="#rewards">Rewards</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="#about">About</a>
-        <a href="#community">Community</a>
-        <a href="#top">Careers</a>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <a href="#top">Privacy</a>
-        <a href="#top">Terms</a>
-        <a href="#top">Cookies</a>
-      </div>
+    <div class="shell footer-wrap">
+      <p>Brainosaur - Future-ready learning and rewards ecosystem.</p>
+      <a href="courses.html">Launch App</a>
     </div>
   </footer>
 
